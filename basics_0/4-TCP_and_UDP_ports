@@ -1,14 +1,3 @@
 #!/usr/bin/env bash
-# 4-TCP_and_UDP_ports fallback using /proc
-
-echo "Active Internet connections (only servers)"
-
-# List TCP listening sockets
-awk 'NR>1 {split($2, a, ":"); if ($4=="0A") printf "Port: %d\n", strtonum("0x" a[2])}' /proc/net/tcp
-
-# List UDP sockets
-awk 'NR>1 {split($2, a, ":"); printf "UDP Port: %d\n", strtonum("0x" a[2])}' /proc/net/udp
-
-# UNIX domain sockets
-echo "Active UNIX domain sockets (only servers)"
-awk 'NR>1 {print "Inode:", $7}' /proc/net/unix
+#this shows the listening ports 
+netstat -lp
