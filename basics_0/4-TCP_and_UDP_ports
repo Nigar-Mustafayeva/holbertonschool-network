@@ -8,4 +8,4 @@ netstat -tulnp
 
 # UNIX domain sockets
 echo "Active UNIX domain sockets (only servers)"
-netstat -lxnp
+netstat -lp
