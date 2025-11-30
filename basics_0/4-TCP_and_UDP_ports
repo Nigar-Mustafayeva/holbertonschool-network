@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# 100-listening_ports.sh
+# Displays listening sockets with PID and program name
+
+# -t: TCP, -u: UDP, -l: listening, -n: numeric, -p: show PID/program
+ss -tulnp
